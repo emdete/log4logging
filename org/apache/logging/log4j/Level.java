@@ -10,7 +10,7 @@ public enum Level {
 	TRACE(600),
 	ALL(Integer.MAX_VALUE);
 
-	private final int intLevel;
+	final int intLevel;
 
 	Level(final int val) {
 		intLevel = val;

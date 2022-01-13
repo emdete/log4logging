@@ -9,25 +9,28 @@ public class LogManager {
 		LoggerImpl(String name) {
 			this.name = name;
 		}
-		public void _log(Level level, String message, Object... params) {
-			java.lang.System.out.println(DATETIMEFORMAT.format(new java.util.Date()) +
+		public void _log(final Level level, final String message, final Object... params) {
+			if (level.intLevel <= Level.DEBUG.intLevel) {
+				java.lang.System.out.println(DATETIMEFORMAT.format(new java.util.Date()) +
 					' ' + level +
-					' ' + name==null?"":name +
-					' ' + message); }
-		public void log(Level level, String message) { this._log(level, message); }
-		public void debug(String message) { this._log(Level.DEBUG, message); }
-		public void error(String message) { this._log(Level.ERROR, message); }
-		public void fatal(String message) { this._log(Level.FATAL, message); }
-		public void info(String message) { this._log(Level.INFO, message); }
-		public void trace(String message) { this._log(Level.TRACE, message); }
-		public void warn(String message) { this._log(Level.WARN, message); }
-		public void log(Level level, String message, Object... params) { this._log(level, message, params); }
-		public void debug(String message, Object... params) { this._log(Level.DEBUG, message, params); }
-		public void error(String message, Object... params) { this._log(Level.ERROR, message, params); }
-		public void fatal(String message, Object... params) { this._log(Level.FATAL, message, params); }
-		public void info(String message, Object... params) { this._log(Level.INFO, message, params); }
-		public void trace(String message, Object... params) { this._log(Level.TRACE, message, params); }
-		public void warn(String message, Object... params) { this._log(Level.WARN, message, params); }
+					' ' + (name==null?"":name) +
+					' ' + message);
+			}
+		}
+		public void log(final Level level, final String message) { this._log(level, message); }
+		public void debug(final String message) { this._log(Level.DEBUG, message); }
+		public void error(final String message) { this._log(Level.ERROR, message); }
+		public void fatal(final String message) { this._log(Level.FATAL, message); }
+		public void info(final String message) { this._log(Level.INFO, message); }
+		public void trace(final String message) { this._log(Level.TRACE, message); }
+		public void warn(final String message) { this._log(Level.WARN, message); }
+		public void log(final Level level, final String message, final Object... params) { this._log(level, message, params); }
+		public void debug(final String message, final Object... params) { this._log(Level.DEBUG, message, params); }
+		public void error(final String message, final Object... params) { this._log(Level.ERROR, message, params); }
+		public void fatal(final String message, final Object... params) { this._log(Level.FATAL, message, params); }
+		public void info(final String message, final Object... params) { this._log(Level.INFO, message, params); }
+		public void trace(final String message, final Object... params) { this._log(Level.TRACE, message, params); }
+		public void warn(final String message, final Object... params) { this._log(Level.WARN, message, params); }
 	}
 	public static Logger getRootLogger() {
 		return new LoggerImpl(null);
