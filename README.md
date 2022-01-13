@@ -28,8 +28,8 @@ things that i want to add but did not do so yet:
 
 - log4j has a complex config infrastructure. i want to replace that with a
   single file with a fix name (if you cannot make it, change the code, it's
-  included) with mainly to settings: logfile and loglevel
-- loggs have to be written to files and files must be rotated. that is a feature
+  included) with mainly two settings: logfile and loglevel
+- loggs have to be written to files and files must be rotated, that is a feature
   logging must support
 - MDCs are a nice thing to transport information through foreign libraries that
   log but are missing context information
