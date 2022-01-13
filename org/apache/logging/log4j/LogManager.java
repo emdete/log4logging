@@ -1,4 +1,5 @@
 package org.apache.logging.log4j;
+
 public class LogManager {
 	static class LoggerImpl implements Logger {
 		static final java.text.DateFormat DATETIMEFORMAT = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
