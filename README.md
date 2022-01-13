@@ -1,4 +1,4 @@
-log for stupid
+log for logging
 ==
 
 target
