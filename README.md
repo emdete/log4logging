@@ -33,5 +33,18 @@ things that i want to add but did not do so yet:
   logging must support
 - MDCs are a nice thing to transport information through foreign libraries that
   log but are missing context information
+- a filtering by logger is sometimes usefull for debugging busy servers
+- support for threading
 
+anti features
+--
+
+features that will not make it into this project:
+
+- colored logging
+- dependencies on foreign libraries
+- timezones
+- config that can better be done in code
+
+so no PRs about those please. feel free to add it for your own benefit.
 
