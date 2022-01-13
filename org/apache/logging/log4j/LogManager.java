@@ -13,9 +13,8 @@ public class LogManager {
 		public void _log(final Level level, final String message, final Object... params) {
 			if (level.intLevel <= Level.DEBUG.intLevel) {
 				java.lang.System.out.println(DATETIMEFORMAT.format(new java.util.Date()) +
-					' ' + level +
-					' ' + (name==null?"":name) +
-					' ' + message);
+					" [" + (name==null?"main":name) + "] " + level + ' ' + message);
+				// TODO params
 			}
 		}
 		public void log(final Level level, final String message) { this._log(level, message); }
@@ -32,6 +31,8 @@ public class LogManager {
 		public void info(final String message, final Object... params) { this._log(Level.INFO, message, params); }
 		public void trace(final String message, final Object... params) { this._log(Level.TRACE, message, params); }
 		public void warn(final String message, final Object... params) { this._log(Level.WARN, message, params); }
+		public void warn(final String message, final Throwable throwable) {this._log(Level.WARN, message, throwable); }
+		public void error(final String message, final Throwable throwable) {this._log(Level.WARN, message, throwable); }
 	}
 	public static Logger getRootLogger() {
 		return new LoggerImpl(null);
