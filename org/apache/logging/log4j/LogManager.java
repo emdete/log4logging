@@ -3,16 +3,20 @@ package org.apache.logging.log4j;
 public class LogManager {
 	static class LoggerImpl implements Logger {
 		static final java.text.DateFormat DATETIMEFORMAT = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
-		static { DATETIMEFORMAT.setTimeZone(java.util.TimeZone.getTimeZone("GMT")); }
+		static { DATETIMEFORMAT.setTimeZone(java.util.TimeZone.getTimeZone("UTC")); }
 
 		String name;
+		java.io.PrintStream out = java.lang.System.out;
 
 		LoggerImpl(String name) {
 			this.name = name;
 		}
+		synchronized public void _write(final String line) {
+			this.out.println(line);
+		}
 		public void _log(final Level level, final String message, final Object... params) {
 			if (level.intLevel <= Level.DEBUG.intLevel) {
-				java.lang.System.out.println(DATETIMEFORMAT.format(new java.util.Date()) +
+				this._write(DATETIMEFORMAT.format(new java.util.Date()) +
 					" [" + (name==null?"main":name) + "] " + level + ' ' + message);
 				// TODO params
 			}
