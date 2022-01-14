@@ -1,7 +1,7 @@
 #!/usr/bin/env -S make -f
 all:
 	javac org/apache/logging/log4j/*.java
-	jar --create --file log4j-api-2.17.1.jar org/apache/logging/log4j/*.class
+	jar --create --file log4logging.jar org/apache/logging/log4j/*.class
 
 run:
 
