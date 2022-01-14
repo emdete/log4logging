@@ -16,9 +16,17 @@ public class LogManager {
 		}
 		public void _log(final Level level, final String message, final Object... params) {
 			if (level.intLevel <= Level.DEBUG.intLevel) {
-				this._write(DATETIMEFORMAT.format(new java.util.Date()) +
-					" [" + (name==null?"main":name) + "] " + level + ' ' + message);
-				// TODO params
+				StringBuilder b = new StringBuilder(DATETIMEFORMAT.format(new java.util.Date()));
+				b.append(" [")
+					.append(name==null?"main":name)
+					.append("] ")
+					.append(level)
+					.append(' ')
+					.append(message);
+				for (int i=0;i<params.length;i++) {
+					b.append(", ").append(params[i]);
+				}
+				this._write(b.toString());
 			}
 		}
 		public void log(final Level level, final String message) { this._log(level, message); }
