@@ -16,8 +16,8 @@ public class LogManager {
 		}
 		public void _log(final Level level, final String message, final Object... params) {
 			if (level.intLevel <= Level.DEBUG.intLevel) {
-				StringBuilder b = new StringBuilder(DATETIMEFORMAT.format(new java.util.Date()));
-				b.append(" [")
+				StringBuilder b = new StringBuilder(DATETIMEFORMAT.format(new java.util.Date()))
+					.append(" [")
 					.append(name==null?"main":name)
 					.append("] ")
 					.append(level)
