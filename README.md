@@ -27,10 +27,10 @@ missing
 things that i want to add but did not do so yet:
 
 - log4j has a complex config infrastructure. i want to replace that with a
-  single file with a fix name (if you cannot make it, change the code, it's
+  single configfile with a fix name (if you cannot make it, change the code, it's
   included) with mainly two settings: logfile and loglevel
 - loggs have to be written to files and files must be rotated, that is a feature
-  logging must support
+  logging must support, rotation and naming decision should be in code
 - MDCs are a nice thing to transport information through foreign libraries that
   log but are missing context information
 - a filtering by logger is sometimes usefull for debugging busy servers
@@ -41,10 +41,12 @@ anti features
 
 features that will not make it into this project:
 
-- colored logging
-- dependencies on foreign libraries
+- colors
+- complex config
+- dependencies
+- hotdeploy
 - timezones
-- config that can better be done in code
+- xml
 
 so no PRs about those please. feel free to add it for your own benefit.
 
