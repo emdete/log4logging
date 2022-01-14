@@ -17,4 +17,5 @@ public interface Logger {
 	void warn(String message, Object... params);
 	void error(final String message, final Throwable throwable);
 	void warn(final String message, final Throwable throwable);
+	void info(String message, Object object);
 }

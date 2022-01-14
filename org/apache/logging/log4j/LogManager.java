@@ -43,8 +43,9 @@ public class LogManager {
 		public void info(final String message, final Object... params) { this._log(Level.INFO, message, params); }
 		public void trace(final String message, final Object... params) { this._log(Level.TRACE, message, params); }
 		public void warn(final String message, final Object... params) { this._log(Level.WARN, message, params); }
-		public void warn(final String message, final Throwable throwable) {this._log(Level.WARN, message, throwable); }
-		public void error(final String message, final Throwable throwable) {this._log(Level.WARN, message, throwable); }
+		public void warn(final String message, final Throwable throwable) { this._log(Level.WARN, message, throwable); }
+		public void error(final String message, final Throwable throwable) { this._log(Level.WARN, message, throwable); }
+		public void info(String message, Object object) { this._log(Level.INFO, message, object); }
 	}
 	public static Logger getRootLogger() {
 		return new LoggerImpl(null);
