@@ -1,9 +1,11 @@
 log for logging
 ==
 
-this is a *WORKS FOR ME* project [tm]. i created it to solve an issue i had
+this is a *WORKS FOR ME™* project. i created it to solve an issue i had
 with a single project. to use it for other projects some additions may be
-necessary.
+necessary. and as always: no guarantee, warranty, assurance or promises. it may
+burn down you house. everything is in you own responsibility, read the code,
+it's about 200 lines of java. no more.
 
 target
 --
